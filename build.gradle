@@ -8,6 +8,7 @@ repositories{
 }
 
 def allureVersion = "2.17.2",
+    selenideVersion = "6.3.3",
     restAssured = "4.4.0" ,
     junitVersion = "5.8.2" ,
     assertjVersion = "3.22.0" ,
@@ -30,8 +31,10 @@ allure {
 dependencies {
     testImplementation(
             "io.rest-assured:rest-assured:$restAssured",
+            "com.codeborne:selenide:$selenideVersion",
             "io.rest-assured:json-schema-validator:$restAssured",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
             "org.assertj:assertj-core:$assertjVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     )
