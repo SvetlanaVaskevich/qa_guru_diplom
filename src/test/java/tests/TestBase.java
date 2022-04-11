@@ -16,6 +16,7 @@ public class TestBase {
 
     static ProjectConfig config = ConfigFactory.create(ProjectConfig.class,System.getProperties());
 
+
     @BeforeAll
     public static void init(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
