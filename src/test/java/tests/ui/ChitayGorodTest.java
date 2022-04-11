@@ -1,7 +1,9 @@
 package tests.ui;
 
 import allure.Microservice;
+import config.ProjectConfig;
 import io.qameta.allure.*;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,6 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import pages.MainPage;
+import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
@@ -17,6 +20,10 @@ import static io.qameta.allure.Allure.step;
 @Microservice("Chitay-gorod")
 @Feature("WebElements")
 public class ChitayGorodTest extends TestBase {
+
+    TestData data = new TestData();
+
+    public static ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 
     private MainPage mainPage = new MainPage();
 
@@ -123,9 +130,9 @@ public class ChitayGorodTest extends TestBase {
             step("Открываем окно авторизации", () ->
                     mainPage.openLogin());
             step("Вводим имя пользователя svaskevich@bk.ru", () ->
-                    mainPage.setEmail(data.email));
+                    mainPage.setEmail(config.userEmail()));
             step("Вводим пароль ", () ->
-                    mainPage.setPassword(data.password));
+                    mainPage.setPassword(config.userPassword()));
             step("set submit form", () ->
                     mainPage.enterSubmit());
             step("Проверяем успешную авторизацию", () ->

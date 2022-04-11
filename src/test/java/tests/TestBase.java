@@ -1,9 +1,11 @@
-package tests.ui;
+package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.ProjectConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,30 +15,28 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
-    TestData data = new TestData();
-
     @BeforeAll
     public static void init(){
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        /*String browser =System.getProperty("browser");
+        String browser =System.getProperty("browser");
         String version = System.getProperty("version");
         String login = System.getProperty("login");
         String password = System.getProperty("password");
         String url = System.getProperty("url");
-        String remoteUrl = "https://" + login + ":" + password + "@" + url;*/
+        String remoteUrl = "https://" + login + ":" + password + "@" + url;
 
         Configuration.baseUrl = "https://www.chitai-gorod.ru/";
         Configuration.browserSize = "1920x1080";
-        /*Configuration.browser = "";
+        Configuration.browser = "";
         Configuration.browserVersion = version;
-        /*Configuration.remote = remoteUrl;
+        Configuration.remote = remoteUrl;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC",true);
         capabilities.setCapability("enableVideo",true);
-        Configuration.browserCapabilities = capabilities;*/
+        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterEach
