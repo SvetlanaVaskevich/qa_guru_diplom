@@ -33,7 +33,7 @@ public class MainPage {
     showMenu = $("a.header__show-menu");
 
     public MainPage openPage(){
-        open(baseUrl);
+        open("");
         return this;
     }
 
