@@ -35,7 +35,7 @@ public class TestBase {
         Configuration.browser = config.browser();
         Configuration.browserVersion = config.browserVersion();
         Configuration.browserSize = config.browserSize();
-        Configuration.remote = config.remoteUrl();
+        //Configuration.remote = config.remoteUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
