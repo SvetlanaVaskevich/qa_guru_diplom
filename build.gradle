@@ -13,7 +13,9 @@ def allureVersion = "2.17.2",
     junitVersion = "5.8.2" ,
     assertjVersion = "3.22.0",
     ownerVersion = "1.0.12",
-    slf4jVersion = "1.7.32"
+    appiumVersion = "8.0.0",
+    slf4jVersion = "1.7.32",
+    commonVersion = "2.11.0"
 
 allure {
     adapter {
@@ -31,6 +33,7 @@ allure {
 
 dependencies {
     testImplementation(
+            "commons-io:commons-io:$commonVersion",
             "io.rest-assured:rest-assured:$restAssured",
             "com.codeborne:selenide:$selenideVersion",
             "io.rest-assured:json-schema-validator:$restAssured",
@@ -38,7 +41,8 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.assertj:assertj-core:$assertjVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
-            "org.aeonbits.owner:owner:$ownerVersion"
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "io.appium:java-client:$appiumVersion",
     )
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:$slf4jVersion",
@@ -52,7 +56,19 @@ tasks.withType(JavaCompile){
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
-    useJUnitPlatform()
+    useJUnitPlatform{
+        includeTags System.getProperty("tag").toString()
+    }
+
+    if (System.getProperty("threads") != null) {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'                 : true,
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+        ]
+    }
 
     testLogging {
         lifecycle {

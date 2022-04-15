@@ -139,4 +139,3 @@ public class ChitayGorodTest extends TestBase {
                     mainPage.checkAuth(data.name));
         }
     }
-

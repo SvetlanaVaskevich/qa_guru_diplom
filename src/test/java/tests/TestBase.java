@@ -4,52 +4,68 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.ProjectConfig;
+import drivers.BrowserstackMobileDriver;
+import drivers.LocalMobileDriver;
+import drivers.RealDeviceDriver;
 import drivers.WebDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
+import static helpers.Attach.getSessionId;
 
 public class TestBase {
 
-    static ProjectConfig config = ConfigFactory.create(ProjectConfig.class,System.getProperties());
-
+    public static ProjectConfig config = ConfigFactory.create(ProjectConfig.class,System.getProperties());
+    public static String testType = System.getProperty("testType");
 
     @BeforeAll
-    public static void init(){
+    public static void setup(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        ChromeOptions chromeOptions = new ChromeOptions();
 
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--disable-infobars");
-        chromeOptions.addArguments("--disable-popup-blocking");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--lang=ru-ru");
+        switch (testType) {
+            case "ui":
+                WebDriver webDriver = new WebDriver();
+                webDriver.createDriver();
+                break;
+            case "browserstack":
+                Configuration.browser = BrowserstackMobileDriver.class.getName();
+                break;
+            case "emulator":
+                Configuration.browser = LocalMobileDriver.class.getName();
+                break;
+            case "realDevice":
+                Configuration.browser = RealDeviceDriver.class.getName();
+                break;
+        }
+        Configuration.browserSize = null;
+    }
 
-        Configuration.baseUrl = "https://www.chitai-gorod.ru/";
-        Configuration.browser = config.browser();
-        Configuration.browserVersion = config.browserVersion();
-        Configuration.browserSize = config.browserSize();
-        Configuration.remote = config.remoteUrl();
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-        Configuration.browserCapabilities = capabilities;
+    @BeforeEach
+    public void startDriver() {
+        open();
     }
 
     @AfterEach
     public void addAttachments() {
+        String sessionId = getSessionId();
+
         Attach.screenshotAs(System.getProperty("browser")+" "+System.getProperty("version"));
         Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
+
+        switch (testType) {
+            case "browserstack":
+                Attach.videoBrowsetstack(sessionId);
+                break;
+            case "ui":
+                Attach.browserConsoleLogs();
+                Attach.videoSelenoid();
+                break;
+        }
 
         closeWebDriver();
     }
