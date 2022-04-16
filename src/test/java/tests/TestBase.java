@@ -7,7 +7,7 @@ import config.ProjectConfig;
 import drivers.BrowserstackMobileDriver;
 import drivers.LocalMobileDriver;
 import drivers.RealDeviceDriver;
-import drivers.WebDriver;
+import drivers.UWebDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -29,8 +29,7 @@ public class TestBase {
 
         switch (testType) {
             case "ui":
-                WebDriver webDriver = new WebDriver();
-                webDriver.createDriver();
+                UWebDriver.createDriver();
                 break;
             case "browserstack":
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
