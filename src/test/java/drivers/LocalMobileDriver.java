@@ -13,12 +13,9 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 import static org.openqa.selenium.remote.CapabilityType.APPLICATION_NAME;
 
 @ParametersAreNonnullByDefault
