@@ -1,5 +1,8 @@
 package tests.mobile;
 
+import allure.Microservice;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,7 +13,10 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("vaskevich")
 @Tag("mobile")
+@Microservice("Chitay-gorod")
+@Feature("MobileElements")
 public class ChitayGorodMobile extends TestBase {
 
     MobileMainPage mobileMainPage = new MobileMainPage();
