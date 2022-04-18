@@ -45,7 +45,7 @@ public class ChitayGorodTest extends TestBase {
                             "Ижевск, Республика Удмуртская",
                             "Кунгур, Пермский Край"})
     @ParameterizedTest(name = "Тест на выбор города: {0}")
-    @Description("Тест проверяет определение города ")
+    @Description("Тест проверяет выбор города ")
     @DisplayName("Выбор города")
     @Severity(SeverityLevel.NORMAL)
     void chooseCityTest(String value){
