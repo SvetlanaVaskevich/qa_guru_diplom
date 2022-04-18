@@ -61,7 +61,28 @@
 
 ✓ Тест на авторизацию пользователя
 
-## [Сборка в Jenkins](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom_api/)
+## [Сборка в Jenkins](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/)
+    clean 
+    test
+    -DtestType=${testType}
+    -Dtag=${tag}
+    -Dbrowser=${browser}
+    -Dversion=${version}
+    -DbrowserSize=${browserSize}
+
+В данной сборке указаны следующие параметры:
+
+_testType_ - имя ресурса\девайса (возможен запуск в **UI тестов** - в **selenoid**, 
+**mobile тестов** - в **Browserstack**, на эмуляторе в **Android Studi**o c 
+помощью сервера **Appium**)
+
+_tag_ - разновидность тестов (**UI**, **mobile**)
+
+_browser_ - браузер, в котором будут выполняться тесты (**chrome**, **opera**, **firefox**)
+
+_version_ - версия браузера
+
+_browserSize_ - размер окна браузера при выполнении тестов
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/Jenkins_API.png)
 
