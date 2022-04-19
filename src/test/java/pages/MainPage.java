@@ -35,7 +35,7 @@ public class MainPage {
     profile = $("a.header__show-menu"),
     logout = $("a[href='/?logout=yes']"),
     checkbox = $("#checkbox"),
-    image = $("image#title");
+            captcha = $("#h-captcha");
 
 
     public MainPage openPage(){
@@ -51,7 +51,7 @@ public class MainPage {
     }
 
     public MainPage checkboxClick(){
-        if (image.is(Condition.visible)){
+        if (captcha.is(Condition.visible)){
            checkbox.click();
         }
         return this;
