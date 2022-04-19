@@ -129,4 +129,4 @@ _browserSize_ - размер окна браузера при выполнени
 
 ### Видео прохождения UI тестов (пример)
 
-[![Watch the video](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Selenoid.png)](https://github.com/SvetlanaVaskevich/qa_guru_diplom/blob/main/images/screens/e3946464fb55373d119807ed3bd8a87a.mp4)
+![](images/screens/e3946464fb55373d119807ed3bd8a87a-_2_.gif)
