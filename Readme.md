@@ -59,7 +59,6 @@
 
 ✓ Тест на добавление книги в корзину
 
-✓ Тест на авторизацию пользователя
 
 ## [Сборка в Jenkins](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/)
     clean 
@@ -84,8 +83,13 @@ _version_ - версия браузера
 
 _browserSize_ - размер окна браузера при выполнении тестов
 
+## Для UI тестов
+
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Jenkins_UI.png)
 
+## Для mobile тестов
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Jenkins_UI.png)
 
 ## Информация о тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/41/allure/#)
 

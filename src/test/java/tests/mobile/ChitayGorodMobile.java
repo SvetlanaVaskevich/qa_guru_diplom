@@ -88,7 +88,7 @@ public class ChitayGorodMobile extends TestBase {
            mobileMainPage.checkBookInCart("Крошка Панда"));
     }
 
-    @Test
+    /*@Test
     @DisplayName("Проверка входа в личный кабинет")
     void enterToCabinetTest() {
         step("Выбираем город на главной странице", () ->
@@ -107,5 +107,5 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.clickOnMoreFragments();
                 mobileMainPage.checkUserName("Svetlana");
         });
-    }
+    }*/
 }
