@@ -87,7 +87,7 @@ _browserSize_ - размер окна браузера при выполнени
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Jenkins_UI.png)
 
 
-## Информация о тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/16/allure/#)
+## Информация о тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/41/allure/#)
 
 ### Для **UI** тестов
 
@@ -97,21 +97,23 @@ _browserSize_ - размер окна браузера при выполнени
 
 ### Окно с тестовыми кейсами
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Tests.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Tests_NEW.png)
 
 ### Окно с графиками
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Graphs.png)
 
-## Интеграция с [AllureTestOps](https://allure.autotests.cloud/project/1249/test-cases?treeId=0)
+## Интеграция с [AllureTestOps](https://allure.autotests.cloud/project/1252/test-cases?treeId=0)
 
-###Тест-кейсы с историей запусков
+###Тест-кейсы
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/AllureTestCases.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE_Tests.png)
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE_main.png)
 
 ###Дашборд
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/AllureDashboards.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE.png)
 
 ## Уведомление в Telegram
 
