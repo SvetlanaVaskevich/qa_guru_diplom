@@ -89,17 +89,19 @@ _browserSize_ - размер окна браузера при выполнени
 
 ## Информация о тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/16/allure/#)
 
+### Для **UI** тестов
+
 ### Главное окно
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/AllureReport1.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Main.png)
 
 ### Окно с тестовыми кейсами
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/AllureReport2.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Tests.png)
 
 ### Окно с графиками
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/AllureGraphs.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Graphs.png)
 
 ## Интеграция с [AllureTestOps](https://allure.autotests.cloud/project/1249/test-cases?treeId=0)
 
@@ -114,5 +116,7 @@ _browserSize_ - размер окна браузера при выполнени
 ## Уведомление в Telegram
 
 После завершения тестов отчет о прохождении приходит в Telegram с помощью заранее созданного бота
+ 
+### Для UI тестов
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom_api/main/images/screens/TelegrammAPI.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Telegramm_UI.png)

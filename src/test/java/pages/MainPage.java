@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPage {
 
     private SelenideElement
-    input = $("input.search-form__input.js__search-input"),
+    input = $("input.search-form__input"),
     title = $("div.js__search_info").$("h1"),
     city = $("#city"),
     cityChange = $("#city-сhange"),
@@ -29,10 +29,19 @@ public class MainPage {
     email = $("#popup-email"),
     password = $("#popup-password"),
     submit = $("#authSubmit"),
-    showMenu = $("a.header__show-menu");
+    showMenu = $("a.header__show-menu"),
+    notification = $("#push-notification-balloon"),
+    buttonPopUp = $("#push-notification-balloon button.color_grey.push-notification-balloon-hide.js__hide-push-balloon");
 
     public MainPage openPage(){
         open("");
+        return this;
+    }
+
+    public MainPage notification(){
+        if (notification.is(Condition.visible)){
+            buttonPopUp.click();
+        }
         return this;
     }
 
@@ -91,6 +100,7 @@ public class MainPage {
     }
 
     public MainPage chooseBook(){
+        sleep(250);
         productLink.click();
         return this;
     }

@@ -27,6 +27,7 @@ public class TestBase {
     public static void setup(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
+        UWebDriver.createDriver();
         switch (testType) {
             case "ui":
                 UWebDriver.createDriver();
