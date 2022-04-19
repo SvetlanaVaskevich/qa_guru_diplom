@@ -105,7 +105,7 @@ _browserSize_ - размер окна браузера при выполнени
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Graphs.png)
 
-## Информация о mobile тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/41/allure/#)
+## Информация о mobile тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/42/allure/#)
 
 ### Главное окно
 
@@ -121,15 +121,22 @@ _browserSize_ - размер окна браузера при выполнени
 
 ## Интеграция с [AllureTestOps](https://allure.autotests.cloud/project/1252/test-cases?treeId=0)
 
-###Тест-кейсы
+###Тест-кейсы UI тестов
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE_Tests.png)
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE_main.png)
 
-###Дашборд
+###Дашборд UI тестов
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE.png)
+
+###Тест-кейсы mobile тестов
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureEE_mobile_tests.png)
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureEE_mobile_main.png)
+
 
 ## Уведомление в Telegram
 
