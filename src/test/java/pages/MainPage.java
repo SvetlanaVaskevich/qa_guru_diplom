@@ -33,7 +33,10 @@ public class MainPage {
     notification = $("#push-notification-balloon"),
     buttonPopUp = $("#push-notification-balloon button.color_grey.push-notification-balloon-hide.js__hide-push-balloon"),
     profile = $("a.header__show-menu"),
-    logout = $("a[href='/?logout=yes']");
+    logout = $("a[href='/?logout=yes']"),
+    checkbox = $("#checkbox"),
+    image = $("image#title");
+
 
     public MainPage openPage(){
         open("");
@@ -43,6 +46,13 @@ public class MainPage {
     public MainPage notification(){
         if (notification.is(Condition.visible)){
             buttonPopUp.click();
+        }
+        return this;
+    }
+
+    public MainPage checkboxClick(){
+        if (image.is(Condition.visible)){
+           checkbox.click();
         }
         return this;
     }
