@@ -31,7 +31,9 @@ public class MainPage {
     submit = $("#authSubmit"),
     showMenu = $("a.header__show-menu"),
     notification = $("#push-notification-balloon"),
-    buttonPopUp = $("#push-notification-balloon button.color_grey.push-notification-balloon-hide.js__hide-push-balloon");
+    buttonPopUp = $("#push-notification-balloon button.color_grey.push-notification-balloon-hide.js__hide-push-balloon"),
+    profile = $("a.header__show-menu"),
+    logout = $("a[href='/?logout=yes']");
 
     public MainPage openPage(){
         open("");
@@ -132,6 +134,12 @@ public class MainPage {
 
     public MainPage checkAuth(String value){
         showMenu.shouldHave(Condition.text(value));
+        return this;
+    }
+
+    public MainPage logOut(){
+        profile.hover();
+        logout.click();
         return this;
     }
 }
