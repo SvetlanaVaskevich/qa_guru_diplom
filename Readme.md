@@ -89,11 +89,9 @@ _browserSize_ - размер окна браузера при выполнени
 
 ## Для mobile тестов
 
-![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Jenkins_UI.png)
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Jenkins_mobile.png)
 
-## Информация о тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/41/allure/#)
-
-### Для **UI** тестов
+## Информация о UI тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/41/allure/#)
 
 ### Главное окно
 
@@ -106,6 +104,20 @@ _browserSize_ - размер окна браузера при выполнени
 ### Окно с графиками
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureReport_Graphs.png)
+
+## Информация о mobile тестах в [Allure report](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/41/allure/#)
+
+### Главное окно
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureR_main.png)
+
+### Окно с тестовыми кейсами
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureR_tests.png)
+
+### Окно с графиками
+
+![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureR_graphs.png)
 
 ## Интеграция с [AllureTestOps](https://allure.autotests.cloud/project/1252/test-cases?treeId=0)
 
