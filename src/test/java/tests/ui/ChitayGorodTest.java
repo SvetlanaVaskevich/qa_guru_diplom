@@ -143,7 +143,7 @@ public class ChitayGorodTest extends TestBase {
                         "                "));
     }
 
-        @Test
+        /*@Test
         @Description("Тест проверяет авторизацию пользователя")
         @DisplayName("Авторизация")
         @Severity(SeverityLevel.CRITICAL)
@@ -164,5 +164,5 @@ public class ChitayGorodTest extends TestBase {
                 mainPage.notification();
                 mainPage.checkAuth(data.name);
             });
-        }
+        }*/
     }
