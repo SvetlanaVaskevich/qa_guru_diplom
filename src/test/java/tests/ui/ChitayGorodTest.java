@@ -35,13 +35,12 @@ public class ChitayGorodTest extends TestBase {
     void searchProductOnParameterTest(String value){
         step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
             mainPage.openPage();
-            mainPage.checkboxClick();
-            mainPage.notification();
+            mainPage.closeNotification();
         });
         step("Вводим значение параметра в поле Поиска", () ->
                 mainPage.searchProduct(value));
         step("Проверяем результат поиска", () -> {
-            mainPage.notification();
+            mainPage.closeNotification();
             mainPage.checkResultProduct(value);
         });
     }
@@ -56,13 +55,12 @@ public class ChitayGorodTest extends TestBase {
         String[] split = value.split(",");
         step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
             mainPage.openPage();
-            mainPage.checkboxClick();
-            mainPage.notification();
+            mainPage.closeNotification();
         });
         step("Вводим название города и выбираем его из предложенного списка", () ->
             mainPage.chooseCity(split[0], split[1]));
         step("Проверяем название города в главном меню", () -> {
-            mainPage.notification();
+            mainPage.closeNotification();
             mainPage.checkCity(split[0], split[1]);
         });
     }
@@ -78,14 +76,13 @@ public class ChitayGorodTest extends TestBase {
     public void searchCategoryTest(String data, String result) {
         step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
             mainPage.openPage();
-            mainPage.checkboxClick();
-            mainPage.notification();
+            mainPage.closeNotification();
         });
 
         step("Выбираем вкладку в главном меню ", () ->
             mainPage.chooseMenuList(data));
         step("Проверяме результат открытой вкладки ", () -> {
-            mainPage.notification();
+            mainPage.closeNotification();
             mainPage.checkMenuList(result);
         });
     }
@@ -97,13 +94,12 @@ public class ChitayGorodTest extends TestBase {
     public void navMenuTest(){
         step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
             mainPage.openPage();
-            mainPage.checkboxClick();
-            mainPage.notification();
+            mainPage.closeNotification();
         });
         step("Выбираем вкладку в навигационном меню", () ->
             mainPage.chooseNavItem(data.titleNavItem));
         step("Проверяем результат открытия вкладки", () -> {
-            mainPage.notification();
+            mainPage.closeNotification();
             mainPage.checkNavItem(data.titleNavItem);
         });
     }
@@ -116,13 +112,12 @@ public class ChitayGorodTest extends TestBase {
     public void sliderMenuTest(String value){
         step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
             mainPage.openPage();
-            mainPage.checkboxClick();
-            mainPage.notification();
+            mainPage.closeNotification();
         });
         step("Выбираем категорию книг", () ->
             mainPage.chooseCategory(value));
         step("Проверяем открытие страницы с выбранной категорий книг", () -> {
-            mainPage.notification();
+            mainPage.closeNotification();
             mainPage.checkCategory(value);
         });
     }
@@ -134,13 +129,12 @@ public class ChitayGorodTest extends TestBase {
     public void searchBookTest(){
         step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
             mainPage.openPage();
-            mainPage.checkboxClick();
-            mainPage.notification();
+            mainPage.closeNotification();
         });
         step("Поиск книги в поле Поиска", () ->
             mainPage.searchProduct(data.titleBook));
         step("Выбор книги из найденных вариантов", () -> {
-            mainPage.notification();
+            mainPage.closeNotification();
             mainPage.chooseBook();
         });
         step("Проверяем название книги", () ->
@@ -156,8 +150,7 @@ public class ChitayGorodTest extends TestBase {
         void generatedTest() {
             step("Открываем страницу https://www.chitai-gorod.ru/", () -> {
                 mainPage.openPage();
-                mainPage.checkboxClick();
-                mainPage.notification();
+                mainPage.closeNotification();
 
             });
             step("Открываем окно авторизации", () ->
@@ -169,7 +162,7 @@ public class ChitayGorodTest extends TestBase {
             step("set submit form", () ->
                 mainPage.enterSubmit());
             step("Проверяем успешную авторизацию", () -> {
-                mainPage.notification();
+                mainPage.closeNotification();
                 mainPage.checkAuth(data.name);
             });
             step("Выходим из личного кабинета", () ->
