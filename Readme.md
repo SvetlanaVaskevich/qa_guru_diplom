@@ -61,8 +61,7 @@
 
 
 ## [Сборка в Jenkins](https://jenkins.autotests.cloud/job/C10-Svetlana_Vas_diplom/)
-    clean 
-    test
+    gradle clean test
     -DtestType=${testType}
     -Dtag=${tag}
     -Dbrowser=${browser}
