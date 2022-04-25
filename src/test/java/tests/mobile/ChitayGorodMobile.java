@@ -3,6 +3,7 @@ package tests.mobile;
 import allure.Microservice;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,24 +16,19 @@ import static io.qameta.allure.Allure.step;
 
 @Owner("vaskevich")
 @Tag("mobile")
-@Microservice("Chitay-gorod")
-@Feature("MobileElements")
+@Feature("MainPageTests")
 public class ChitayGorodMobile extends TestBase {
 
     MobileMainPage mobileMainPage = new MobileMainPage();
 
-
-    @ValueSource(strings = {"Книжные циклы","Подборки"})
+    @ValueSource(strings = {"Книжные циклы", "Подборки"})
     @ParameterizedTest(name = "Проверка вкладок главного меню:{0}")
     @DisplayName("Проверка вкладок главного меню")
     void checkMainMenuTest(String value) {
-        step("Выбираем город на главной странице", () -> {
-            mobileMainPage.chooseCity("Екатеринбург, Свердловская Область");
-        });
-        step("Проверяем навигационное меню на главной странице", () -> {
-            mobileMainPage.checkNavMenu(value);
-            mobileMainPage.backPage();
-        });
+        step("Выбираем город на главной странице", () ->
+                mobileMainPage.chooseCity("Екатеринбург, Свердловская Область"));
+        step("Проверяем навигационное меню на главной странице", () ->
+                mobileMainPage.checkNavMenu(value));
     }
 
     @Test
@@ -40,9 +36,8 @@ public class ChitayGorodMobile extends TestBase {
     void checkSliderTest() {
         step("Выбираем город на главной странице", () ->
                 mobileMainPage.chooseCity("Екатеринбург, Свердловская Область"));
-        step("Проверяем вкладки разделов на главной странице", () -> {
-            mobileMainPage.checkSliderMenu("Новинки литературы");
-        });
+        step("Проверяем вкладки разделов на главной странице", () ->
+                mobileMainPage.checkSliderMenu("Новинки литературы"));
     }
 
     @Test
@@ -80,15 +75,16 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.searchProduct("Крошка Панда"));
         step("Нажимаем на первую книгу в результатах поиска", () ->
                 mobileMainPage.clickOnProduct());
-        step("Нажимаем на кнопку Купить на странице книги", () ->{
-              mobileMainPage.clickButtonBuy();
-              mobileMainPage.clickButtonBuy();
+        step("Нажимаем на кнопку Купить на странице книги", () -> {
+            mobileMainPage.clickButtonBuy();
+            mobileMainPage.clickButtonBuy();
         });
         step("Проверяем наличие книги в корзине", () ->
-           mobileMainPage.checkBookInCart("Крошка Панда"));
+                mobileMainPage.checkBookInCart("Крошка Панда"));
     }
 
-    /*@Test
+    @Disabled
+    @Test
     @DisplayName("Проверка входа в личный кабинет")
     void enterToCabinetTest() {
         step("Выбираем город на главной странице", () ->
@@ -104,8 +100,8 @@ public class ChitayGorodMobile extends TestBase {
         step("Нажимаем кнопку входа в кабинет", () ->
                 mobileMainPage.clickOnSignIn());
         step("Проверяем имя пользователя в Личном кабинете", () -> {
-                mobileMainPage.clickOnMoreFragments();
-                mobileMainPage.checkUserName("Svetlana");
+            mobileMainPage.clickOnMoreFragments();
+            mobileMainPage.checkUserName("Svetlana");
         });
-    }*/
+    }
 }
