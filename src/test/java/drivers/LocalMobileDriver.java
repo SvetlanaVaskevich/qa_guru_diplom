@@ -21,12 +21,12 @@ import static org.openqa.selenium.remote.CapabilityType.APPLICATION_NAME;
 @ParametersAreNonnullByDefault
 public class LocalMobileDriver implements WebDriverProvider {
 
+    EmulatorConfig config = ConfigFactory.create(EmulatorConfig.class);
+
     @Override
     @CheckReturnValue
     @Nonnull
     public WebDriver createDriver(Capabilities capabilities) {
-
-        EmulatorConfig config = ConfigFactory.create(EmulatorConfig.class);
 
         File app = downloadApk();
 

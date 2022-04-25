@@ -23,12 +23,12 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 @ParametersAreNonnullByDefault
 public class RealDeviceDriver implements WebDriverProvider{
 
+    RealDeviceConfig config = ConfigFactory.create(RealDeviceConfig.class,System.getProperties());
+
         @Override
         @CheckReturnValue
         @Nonnull
         public WebDriver createDriver(Capabilities capabilities) {
-
-            RealDeviceConfig config = ConfigFactory.create(RealDeviceConfig.class,System.getProperties());
 
             File app = downloadApk();
 

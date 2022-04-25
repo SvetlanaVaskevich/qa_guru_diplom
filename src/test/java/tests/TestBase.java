@@ -16,7 +16,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
-import static helpers.Attach.getSessionId;
+import static helpers.Attach.*;
 
 public class TestBase {
 
@@ -29,7 +29,7 @@ public class TestBase {
 
         switch (testType) {
             case "ui":
-                UWebDriver.createDriver();
+                Configuration.browser = UWebDriver.class.getName();
                 break;
             case "browserstack":
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
@@ -53,16 +53,16 @@ public class TestBase {
     public void addAttachments() {
         String sessionId = getSessionId();
 
-        Attach.screenshotAs(System.getProperty("browser")+" "+System.getProperty("version"));
-        Attach.pageSource();
+        screenshotAs(System.getProperty("browser")+" "+System.getProperty("version"));
+        pageSource();
 
         switch (testType) {
             case "browserstack":
-                Attach.videoBrowsetstack(sessionId);
+                videoBrowsetstack(sessionId);
                 break;
             case "ui":
-                Attach.browserConsoleLogs();
-                Attach.videoSelenoid();
+                browserConsoleLogs();
+                videoSelenoid(sessionId);
                 break;
         }
 
