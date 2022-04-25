@@ -120,17 +120,17 @@ _browserSize_ - размер окна браузера при выполнени
 
 ## Интеграция с [AllureTestOps](https://allure.autotests.cloud/project/1252/test-cases?treeId=0)
 
-###Тест-кейсы UI тестов
+ ###Тест-кейсы UI тестов
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE_Tests.png)
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE_main.png)
 
-###Дашборд UI тестов
+ ###Дашборд UI тестов
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/Allure_EE.png)
 
-###Тест-кейсы mobile тестов
+ ###Тест-кейсы mobile тестов
 
 ![](https://raw.githubusercontent.com/SvetlanaVaskevich/qa_guru_diplom/main/images/screens/AllureEE_mobile_tests.png)
 
