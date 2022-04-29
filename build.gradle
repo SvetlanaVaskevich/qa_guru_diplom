@@ -55,7 +55,6 @@ tasks.withType(JavaCompile){
 }
 
 tasks.withType(Test) {
-    useJUnitPlatform()
     systemProperties(System.getProperties())
 
     if (System.getProperty("threads") != null) {
@@ -75,6 +74,10 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task ui_tests(type: Test) {
