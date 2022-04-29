@@ -11,6 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import pages.MainPage;
+import pages.ProductPage;
 import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
@@ -22,6 +23,7 @@ public class ChitayGorodTest extends TestBase {
     TestData data = new TestData();
     ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
     MainPage mainPage = new MainPage();
+    ProductPage productPage = new ProductPage();
 
     @Tag("ui")
     @ValueSource(strings = {"Программирование", "Воспитание"})
@@ -136,10 +138,10 @@ public class ChitayGorodTest extends TestBase {
                 mainPage.searchProduct(data.titleBook));
         step("Выбор книги из найденных вариантов", () -> {
             mainPage.closeNotification();
-            mainPage.chooseBook();
+            productPage.chooseBook();
         });
         step("Проверяем название книги", () ->
-                mainPage.checkBook(data.titleBook));
+            productPage.checkBook(data.titleBook));
     }
 
     @Tag("ui")

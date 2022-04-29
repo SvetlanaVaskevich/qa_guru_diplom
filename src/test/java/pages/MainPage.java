@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
-    private SelenideElement
+    public SelenideElement
             searchInput = $("input.search-form__input"),
             searchTitle = $("div.js__search_info").$("h1"),
             cityButton = $("#city"),
@@ -23,8 +23,6 @@ public class MainPage {
             titleNavItem = $("h1.color_blue.color_blue--oes-title"),
             sliderTitle = $("div.js__main_page_sliders"),
             titleСategory = $("h1.color_blue"),
-            titleBook = $("h1.product__title.js-analytic-product-title"),
-            productLink = $("a.product-card__img.js-analytic-productlink"),
             loginInput = $("button.js__showPopupLogin"),
             emailInput = $("#popup-email"),
             passwordInput = $("#popup-password"),
@@ -97,17 +95,6 @@ public class MainPage {
 
     public MainPage checkCategory(String value) {
         titleСategory.shouldHave(Condition.text(value));
-        return this;
-    }
-
-    public MainPage chooseBook() {
-        sleep(250);
-        productLink.click();
-        return this;
-    }
-
-    public MainPage checkBook(String value) {
-        titleBook.shouldHave(Condition.text(value));
         return this;
     }
 
