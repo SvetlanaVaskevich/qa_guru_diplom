@@ -1,10 +1,7 @@
 package drivers;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverProvider;
 import config.ProjectConfig;
-import io.appium.java_client.android.AndroidDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -16,16 +13,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Level;
 
 
 public class UWebDriver implements WebDriverProvider {
-    public static ProjectConfig config = ConfigFactory.create(ProjectConfig.class,System.getProperties());
+    public static ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
@@ -34,8 +28,8 @@ public class UWebDriver implements WebDriverProvider {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setBrowserName(config.browser());
-        desiredCapabilities.setCapability("browserVersion",config.browserVersion());
-        desiredCapabilities.setCapability("browserSize",config.browserSize());
+        desiredCapabilities.setCapability("browserVersion", config.browserVersion());
+        desiredCapabilities.setCapability("browserSize", config.browserSize());
         desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
         desiredCapabilities.setCapability("enableVNC", true);
         desiredCapabilities.setCapability("enableVideo", true);
