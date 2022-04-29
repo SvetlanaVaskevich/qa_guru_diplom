@@ -30,7 +30,7 @@ public class ChitayGorodTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Поиск товара по параметру")
     void searchProductOnParameterTest(String value) {
-        step("Открываем страницу <{baseUrl}>", () -> {
+        step("Открываем страницу", () -> {
             mainPage.openPage();
             mainPage.closeNotification();
         });
@@ -50,7 +50,7 @@ public class ChitayGorodTest extends TestBase {
     @DisplayName("Выбор города")
     void chooseCityTest(String value) {
         String[] split = value.split(",");
-        step("Открываем страницу <{baseUrl}>", () -> {
+        step("Открываем страницу", () -> {
             mainPage.openPage();
             mainPage.closeNotification();
         });
@@ -71,7 +71,7 @@ public class ChitayGorodTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Открытие вкладок в главном меню")
     void searchCategoryTest(String data, String result) {
-        step("Открываем страницу <{baseUrl}>", () -> {
+        step("Открываем страницу", () -> {
             mainPage.openPage();
             mainPage.closeNotification();
         });
@@ -88,7 +88,7 @@ public class ChitayGorodTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Открытие вкладки в всплывающем меню")
     void navMenuTest() {
-        step("Открываем страницу <{baseUrl}>", () -> {
+        step("Открываем страницу", () -> {
             mainPage.openPage();
             mainPage.closeNotification();
         });
@@ -123,7 +123,7 @@ public class ChitayGorodTest extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Поиск заданной книги")
     void searchBookTest() {
-        step("Открываем страницу <{baseUrl}>", () -> {
+        step("Открываем страницу", () -> {
             mainPage.openPage();
             mainPage.closeNotification();
         });
@@ -142,7 +142,7 @@ public class ChitayGorodTest extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Авторизация пользователя")
     void generatedTest() {
-        step("Открываем страницу <{baseUrl}>", () -> {
+        step("Открываем страницу", () -> {
             mainPage.openPage();
             mainPage.closeNotification();
         });
