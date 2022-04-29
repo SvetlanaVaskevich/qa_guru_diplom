@@ -30,6 +30,7 @@ public class TestBase {
         switch (testType) {
             case "ui":
                 Configuration.browser = UWebDriver.class.getName();
+                Configuration.baseUrl = "https://www.chitai-gorod.ru/";
                 break;
             case "browserstack":
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
@@ -53,7 +54,7 @@ public class TestBase {
     public void addAttachments() {
         String sessionId = getSessionId();
 
-        screenshotAs(System.getProperty("browser")+" "+System.getProperty("version"));
+        screenshotAs(System.getProperty("browser") + " " + System.getProperty("version"));
         pageSource();
 
         switch (testType) {
