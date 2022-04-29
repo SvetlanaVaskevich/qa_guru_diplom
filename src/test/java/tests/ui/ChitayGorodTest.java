@@ -20,8 +20,8 @@ import static io.qameta.allure.Allure.step;
 @Feature("MainPageTests")
 public class ChitayGorodTest extends TestBase {
 
-    TestData data = new TestData();
     ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+    TestData data = new TestData();
     MainPage mainPage = new MainPage();
     ProductPage productPage = new ProductPage();
 
