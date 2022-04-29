@@ -14,13 +14,13 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("mobile")
 @Owner("vaskevich")
 @Feature("MobileMainPageTests")
 public class ChitayGorodMobile extends TestBase {
 
     MobileMainPage mobileMainPage = new MobileMainPage();
 
+    @Tag("mobile")
     @ValueSource(strings = {"Книжные циклы", "Подборки"})
     @ParameterizedTest(name = "Проверка вкладок главного меню:{0}")
     @DisplayName("Проверка вкладок главного меню")
@@ -31,6 +31,7 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.checkNavMenu(value));
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Проверка разделов на главной странице")
     void checkSliderTest() {
@@ -40,6 +41,7 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.checkSliderMenu("Новинки литературы"));
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Проверка каталога")
     void checkatalogTest() {
@@ -53,6 +55,7 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.checkSubCatalog("Книги для детей"));
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Проверка поиска книги")
     void searchBookTest() {
@@ -66,6 +69,7 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.checkTitleProduct("Мадам"));
     }
 
+    @Tag("mobile")
     @Test
     @DisplayName("Проверка добавление книги в корзину")
     void addToCartTest() {
@@ -83,6 +87,7 @@ public class ChitayGorodMobile extends TestBase {
                 mobileMainPage.checkBookInCart("Крошка Панда"));
     }
 
+    @Tag("mobile")
     @Disabled
     @Test
     @DisplayName("Проверка входа в личный кабинет")

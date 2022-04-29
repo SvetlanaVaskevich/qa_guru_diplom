@@ -15,7 +15,6 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("ui")
 @Owner("vaskevich")
 @Feature("MainPageTests")
 public class ChitayGorodTest extends TestBase {
@@ -24,6 +23,7 @@ public class ChitayGorodTest extends TestBase {
     ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
     MainPage mainPage = new MainPage();
 
+    @Tag("ui")
     @ValueSource(strings = {"Программирование", "Воспитание"})
     @ParameterizedTest(name = "Поиск товара по параметру: {0}")
     @Description("Тест проверяет поиск товара по выбранному параметру")
@@ -42,6 +42,7 @@ public class ChitayGorodTest extends TestBase {
         });
     }
 
+    @Tag("ui")
     @ValueSource(strings = {"Лесной, Свердловская Область",
             "Кунгур, Пермский Край"})
     @ParameterizedTest(name = "Тест на выбор города: {0}")
@@ -62,6 +63,7 @@ public class ChitayGorodTest extends TestBase {
         });
     }
 
+    @Tag("ui")
     @CsvSource(value = {
             "Адреса магазинов, Наши магазины",
             "Доставка и оплата, Доставка и оплата"
@@ -83,6 +85,7 @@ public class ChitayGorodTest extends TestBase {
         });
     }
 
+    @Tag("ui")
     @Test
     @Description("Тест проверяет вкладки в всплывающем меню вкладки")
     @Severity(SeverityLevel.NORMAL)
@@ -100,6 +103,7 @@ public class ChitayGorodTest extends TestBase {
         });
     }
 
+    @Tag("ui")
     @ValueSource(strings = {"Лучшие из лучших", "Скоро в продаже"})
     @ParameterizedTest(name = "Работа слайдера: {0}")
     @Description("Тест проверяет открытие категорий книг на главном странице")
@@ -118,6 +122,7 @@ public class ChitayGorodTest extends TestBase {
         });
     }
 
+    @Tag("ui")
     @Test
     @Description("Тест проверяет поиск книги в поле Поиска")
     @Severity(SeverityLevel.CRITICAL)
@@ -137,6 +142,7 @@ public class ChitayGorodTest extends TestBase {
                 mainPage.checkBook(data.titleBook));
     }
 
+    @Tag("ui")
     @Test
     @Description("Тест проверяет авторизацию пользователя")
     @Severity(SeverityLevel.CRITICAL)
