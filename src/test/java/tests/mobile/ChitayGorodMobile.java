@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("mobile")
 @Owner("vaskevich")
-@Feature("MainPageTests")
+@Feature("MobileMainPageTests")
 public class ChitayGorodMobile extends TestBase {
 
     MobileMainPage mobileMainPage = new MobileMainPage();
