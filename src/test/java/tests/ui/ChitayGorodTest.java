@@ -15,8 +15,8 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 
-@Owner("vaskevich")
 @Tag("ui")
+@Owner("vaskevich")
 @Feature("MainPageTests")
 public class ChitayGorodTest extends TestBase {
 
