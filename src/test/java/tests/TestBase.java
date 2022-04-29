@@ -34,15 +34,17 @@ public class TestBase {
                 break;
             case "browserstack":
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
+                Configuration.browserSize = null;
                 break;
             case "emulator":
                 Configuration.browser = LocalMobileDriver.class.getName();
+                Configuration.browserSize = null;
                 break;
             case "realDevice":
                 Configuration.browser = RealDeviceDriver.class.getName();
+                Configuration.browserSize = null;
                 break;
         }
-        Configuration.browserSize = null;
     }
 
     @BeforeEach
@@ -59,14 +61,16 @@ public class TestBase {
 
         switch (testType) {
             case "browserstack":
-                videoBrowsetstack(sessionId);
+                closeWebDriver();
+                videoBrowserstack(sessionId);
                 break;
             case "ui":
                 browserConsoleLogs();
                 videoSelenoid(sessionId);
+                closeWebDriver();
                 break;
         }
 
-        closeWebDriver();
+
     }
 }

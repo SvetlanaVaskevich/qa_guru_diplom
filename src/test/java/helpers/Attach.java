@@ -53,7 +53,7 @@ public class Attach {
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-    public static String videoBrowsetstack(String sessionId) {
+    public static String videoBrowserstack(String sessionId) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + BrowserStack.videoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
