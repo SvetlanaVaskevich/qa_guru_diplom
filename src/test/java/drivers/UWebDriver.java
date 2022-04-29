@@ -1,5 +1,6 @@
 package drivers;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverProvider;
 import config.ProjectConfig;
 import org.aeonbits.owner.ConfigFactory;
@@ -24,14 +25,14 @@ public class UWebDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
 
+        Configuration.browser = config.browser();
+        Configuration.browserVersion = config.browserVersion();
+        Configuration.browserSize = config.browserSize();
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setBrowserName(config.browser());
-        desiredCapabilities.setCapability("browserVersion", config.browserVersion());
-        desiredCapabilities.setCapability("browserSize", config.browserSize());
-        //desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
         desiredCapabilities.setCapability("enableVNC", true);
         desiredCapabilities.setCapability("enableVideo", true);
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
+        Configuration.browserCapabilities = desiredCapabilities;
 
         return getRemoteWebDriver(desiredCapabilities);
     }
