@@ -23,14 +23,12 @@ public class UWebDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        LoggingPreferences logPrefs = new LoggingPreferences();
-        logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setBrowserName(config.browser());
         desiredCapabilities.setCapability("browserVersion", config.browserVersion());
         desiredCapabilities.setCapability("browserSize", config.browserSize());
-        desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+        //desiredCapabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
         desiredCapabilities.setCapability("enableVNC", true);
         desiredCapabilities.setCapability("enableVideo", true);
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
